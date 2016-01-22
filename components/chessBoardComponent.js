@@ -38,6 +38,7 @@ var ChessBoard = React.createClass({displayName: "ChessBoard",
         if(validMove(x, y, newX, newY)){
           $(ui.draggable).remove();
           $('#' + cell).append(knightHtml)
+          localStorage.setItem("knightPosition", JSON.stringify([newX,newY]));
           $('#knight').draggable({
             helper: 'clone'
           });
